@@ -1,5 +1,5 @@
-import express = require("express");
-import jwt = require("jsonwebtoken");
+import * as express from 'express';
+import * as jwt from 'jsonwebtoken';
 
 const app = express();
 
@@ -58,7 +58,7 @@ function verifyToken(req, res, next) {
   }
 }
 
-const port = 5000;
+const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
